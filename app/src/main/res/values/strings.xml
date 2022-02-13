@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Driver license Renewal</string>
     <string name="sign_up"> <u>Sign Up!</u>.</string>
+    <string name="favorite">Favorite</string>
+    <string name="search">Search</string>
+    <string name="content_description_more">Content description</string>
+    <string name="more">More</string>
+    <string name="content_description_favorite">Favorite</string>
+    <string name="content_description_search">Search</string>
 </resources>
