@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "847735921500",
+    "project_id": "driver-license-renewal",
+    "storage_bucket": "driver-license-renewal.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:847735921500:android:02ddfd44f6cde54481bf99",
+        "android_client_info": {
+          "package_name": "com.example.driverlicenserenewal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "847735921500-k07q1is6b8mskgnea2r8tjma2fi8ciuv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3Fup_Gc6t4x0ykc_ryl9-Lixjmb6wVGg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "847735921500-k07q1is6b8mskgnea2r8tjma2fi8ciuv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

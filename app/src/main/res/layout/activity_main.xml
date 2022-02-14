@@ -14,13 +14,14 @@
         android:layout_centerVertical="true"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:hint="Name">
+        android:hint="Email">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck" />
+            tools:ignore="TextContrastCheck"
+            android:inputType="textEmailAddress"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

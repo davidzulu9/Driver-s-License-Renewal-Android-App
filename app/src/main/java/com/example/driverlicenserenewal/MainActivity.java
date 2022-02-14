@@ -13,9 +13,9 @@ import com.google.android.material.textview.MaterialTextView;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextInputLayout nameText, passwordText, questionText;
-    TextView signUpText;
-    MaterialButton loginButton;
+    private TextInputLayout email, passwordText;
+    private TextView signUpText;
+    private MaterialButton loginButton;
 
 
     @Override
@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //Binding the widgets
+        email = findViewById(R.id.textField);
+        passwordText = findViewById(R.id.passwordField);
         loginButton = findViewById(R.id.loginButton);
         signUpText = findViewById(R.id.signUpText);
 
