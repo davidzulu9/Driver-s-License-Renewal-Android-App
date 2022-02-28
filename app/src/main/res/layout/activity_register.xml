@@ -1,214 +1,261 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/firstName"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:hint="First Name">
+        android:padding="5dp"
+        android:layout_margin="5dp">
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/fullName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck" />
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Full Names"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck"
+                android:inputType="textPersonName"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/lastName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/firstName"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:hint="Last Name">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordInput"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck" />
+            android:layout_below="@+id/fullName"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Password"
+            app:endIconMode="password_toggle"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColorHint="#616161"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/email"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/lastName"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:hint="Email"
-        >
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck"
-            android:inputType="textEmailAddress"/>
+            android:layout_below="@+id/passwordInput"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Email"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            >
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck"
+                android:inputType="textEmailAddress"/>
 
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:checkedButton="@+id/radio_button_1"
-        android:layout_width="125dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/email"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="30dp">
-        <RadioButton
-            android:id="@+id/radio_button_1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Male"
-            android:onClick="checkButton"/>
-        <RadioButton
-            android:id="@+id/radio_button_2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Female"
-            android:onClick="checkButton"/>
-    </RadioGroup>
+        </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dateOfBirth"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@+id/radioGroup"
-        android:layout_below="@+id/email"
-        android:layout_marginTop="25dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:hint="Date of birth">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/gender"
+            android:layout_below="@+id/email"
+            android:text="Gender"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            />
 
-        <com.google.android.material.textfield.TextInputEditText
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck"
-            android:inputType="date" />
+            android:orientation="horizontal"
+            android:layout_below="@+id/gender"
+            android:id="@+id/radioGroup"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginTop="5dp">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/maleRadioButton"
+                android:text="Male"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/dateIssued"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/radioGroup"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="10dp"
-        android:hint="Date issued">
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/femaleRadioButton"
+                android:text="Female"
+                android:layout_marginStart="20dp"/>
+        </RadioGroup>
 
-        <com.google.android.material.textfield.TextInputEditText
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateOfBirth"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck"
-            android:inputType="date" />
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Date of birth (dd/mm/yyyy)"
+            android:focusable="false"
+            android:layout_below="@+id/radioGroup"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/expiryDate"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dateOfBirth"
-        android:layout_toRightOf="@+id/dateIssued"
-        android:layout_marginTop="35dp"
-        android:layout_marginEnd="25dp"
-        android:hint="Date of expiry">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/identityNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck"
-            android:inputType="date" />
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="ID Number (______/__/_)"
+            android:layout_below="@+id/dateOfBirth"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/vehicleCategory"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dateIssued"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="25dp"
-        android:hint="Category of Vehicle">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/licenceNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck" />
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Licence Number (________)"
+            android:layout_below="@+id/identityNumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/identityNumber"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/vehicleCategory"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginEnd="10dp"
-        android:hint="ID Number">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateOfIssue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck" />
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Date of issue (dd/mm/yyyy)"
+            android:focusable="false"
+            android:layout_below="@+id/licenceNumber"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/licenceNumber"
-        android:layout_width="190dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/vehicleCategory"
-        android:layout_toRightOf="@+id/identityNumber"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="25dp"
-        android:hint="Licence Number">
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputEditText
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dateOfExpiry"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColorHint="#616161"
-            tools:ignore="TextContrastCheck"/>
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Date of expiry (dd/mm/yyyy)"
+            android:focusable="false"
+            android:layout_below="@+id/dateOfIssue"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
 
-    <Button
-        android:id="@+id/registerButton"
-        style="@style/Widget.MaterialComponents.Button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/identityNumber"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Register" />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-</RelativeLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/vehicleCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:hint="Category of vehicle"
+            android:layout_below="@+id/dateOfExpiry"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="#616161"
+                tools:ignore="TextContrastCheck" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/registerButton"
+            style="@style/Widget.MaterialComponents.Button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Register"
+            android:layout_below="@+id/vehicleCategory"/>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
+

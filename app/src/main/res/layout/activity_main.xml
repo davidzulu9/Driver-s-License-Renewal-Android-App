@@ -8,25 +8,29 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="30dp"
         android:layout_marginEnd="30dp"
-        android:hint="Email">
+        android:hint="email"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:textColorHint="#616161"
             tools:ignore="TextContrastCheck"
-            android:inputType="textEmailAddress"/>
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/passwordField"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textField"
@@ -34,7 +38,8 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="30dp"
         android:hint="Password"
-        app:endIconMode="password_toggle">
+        app:endIconMode="password_toggle"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -58,11 +63,11 @@
         android:id="@+id/questionText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Don't have an account?"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/loginButton"
         android:layout_marginStart="90dp"
-        android:textSize="15sp"
-        android:layout_below="@+id/loginButton"/>
+        android:layout_marginTop="30dp"
+        android:text="Don't have an account?"
+        android:textSize="15sp"/>
 
     <TextView
         android:id="@+id/signUpText"
@@ -71,8 +76,15 @@
         android:layout_below="@+id/loginButton"
         android:layout_marginStart="5dp"
         android:layout_marginTop="30dp"
-        android:textSize="15sp"
         android:layout_toRightOf="@+id/questionText"
-        android:text="@string/sign_up" />
+        android:text="@string/sign_up"
+        android:textSize="15sp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
 
 </RelativeLayout>

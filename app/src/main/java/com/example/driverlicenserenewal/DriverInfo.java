@@ -1,41 +1,22 @@
 package com.example.driverlicenserenewal;
 
 public class DriverInfo {
-
-    String fname, lname, email, gender, dateOfBirth, dateOfIssue, dateOfExpiry, vehicleCategory, identity, licence;
+    String email, gender, password, dateOfBirth, dateOfIssue, dateOfExpiry, vehicleCategory, identityNumber, licenceNo;
 
     public DriverInfo() {
     }
 
-    public DriverInfo(String fname, String lname, String email, String gender,
-                      String dateOfBirth, String dateOfIssue, String dateOfExpiry,
-                      String vehicleCategory, String identity, String licence) {
-        this.fname = fname;
-        this.lname = lname;
+    public DriverInfo(String email, String gender, String password, String dateOfBirth, String dateOfIssue,
+                      String dateOfExpiry, String vehicleCategory, String identityNumber, String licenceNo) {
         this.email = email;
         this.gender = gender;
+        this.password = password;
         this.dateOfBirth = dateOfBirth;
         this.dateOfIssue = dateOfIssue;
         this.dateOfExpiry = dateOfExpiry;
         this.vehicleCategory = vehicleCategory;
-        this.identity = identity;
-        this.licence = licence;
-    }
-
-    public String getFname() {
-        return fname;
-    }
-
-    public void setFname(String fname) {
-        this.fname = fname;
-    }
-
-    public String getLname() {
-        return lname;
-    }
-
-    public void setLname(String lname) {
-        this.lname = lname;
+        this.identityNumber = identityNumber;
+        this.licenceNo = licenceNo;
     }
 
     public String getEmail() {
@@ -52,6 +33,14 @@ public class DriverInfo {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getDateOfBirth() {
@@ -86,19 +75,20 @@ public class DriverInfo {
         this.vehicleCategory = vehicleCategory;
     }
 
-    public String getIdentity() {
-        return identity;
+    public String getIdentityNumber() {
+        return identityNumber;
     }
 
-    public void setIdentity(String identity) {
-        this.identity = identity;
+    public void setIdentityNumber(String identityNumber) {
+        this.identityNumber = identityNumber;
     }
 
-    public String getLicence() {
-        return licence;
+    public String getLicenceNo() {
+        return licenceNo;
     }
 
-    public void setLicence(String licence) {
-        this.licence = licence;
+    public void setLicenceNo(String licenceNo) {
+        this.licenceNo = licenceNo;
     }
+
 }
