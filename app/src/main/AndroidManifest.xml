@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DriverLicenseRenewal">
         <activity
+            android:name=".LicenceDetailsActivity"
+            android:exported="false" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="false" />
         <activity
@@ -23,6 +26,5 @@
         </activity>
         <activity android:name=".HomeActivity" />
     </application>
-
 
 </manifest>

@@ -1,13 +1,14 @@
 package com.example.driverlicenserenewal;
 
 public class DriverInfo {
-    String email, gender, password, dateOfBirth, dateOfIssue, dateOfExpiry, vehicleCategory, identityNumber, licenceNo;
+    String name, email, gender, password, dateOfBirth, dateOfIssue, dateOfExpiry, vehicleCategory, identityNumber, licenceNo;
 
     public DriverInfo() {
     }
 
-    public DriverInfo(String email, String gender, String password, String dateOfBirth, String dateOfIssue,
+    public DriverInfo(String name, String email, String gender, String password, String dateOfBirth, String dateOfIssue,
                       String dateOfExpiry, String vehicleCategory, String identityNumber, String licenceNo) {
+        this.name = name;
         this.email = email;
         this.gender = gender;
         this.password = password;
@@ -17,6 +18,14 @@ public class DriverInfo {
         this.vehicleCategory = vehicleCategory;
         this.identityNumber = identityNumber;
         this.licenceNo = licenceNo;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -90,5 +99,4 @@ public class DriverInfo {
     public void setLicenceNo(String licenceNo) {
         this.licenceNo = licenceNo;
     }
-
 }

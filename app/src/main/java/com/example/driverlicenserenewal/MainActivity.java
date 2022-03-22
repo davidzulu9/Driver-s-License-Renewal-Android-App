@@ -46,13 +46,15 @@ public class MainActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.progressBar);
 
 
+
+
         profileAuth = FirebaseAuth.getInstance();
 
 
 
         MaterialButton loginButton = findViewById(R.id.loginButton);
 
-        //adding functionality
+        //Checking if the has entered the details and login button
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -73,13 +75,11 @@ public class MainActivity extends AppCompatActivity {
                     progressBar.setVisibility(View.VISIBLE);
                     userLogin(email, password);
                 }
-                /*Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
-                startActivity(homeIntent);*/
             }
         });
 
 
-
+        //To the register activity, if the user does not have an account
         signUpText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -93,11 +93,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void userLogin(String email, String password) {
-        profileAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
+        profileAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(MainActivity.this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_LONG).show();
+
+                    Intent homeIntent = new Intent(MainActivity.this, HomeActivity.class);
+                    startActivity(homeIntent);
                 }else{
                     try {
                         throw task.getException();

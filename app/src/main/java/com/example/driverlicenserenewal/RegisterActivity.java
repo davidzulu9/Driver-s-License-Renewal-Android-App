@@ -1,6 +1,7 @@
 package com.example.driverlicenserenewal;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -206,7 +207,7 @@ public class RegisterActivity extends AppCompatActivity {
                             UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(name).build();
                             firebaseUser.updateProfile(profileChangeRequest);
 
-                            DriverInfo driverInfo = new DriverInfo(email, gender, password, dateOfBirth, dateOfIssue,
+                            DriverInfo driverInfo = new DriverInfo(name, email, gender, password, dateOfBirth, dateOfIssue,
                                     dateOfExpiry, vehicleCategory, identityNumber, licenceNo);
 
                             reference = rootNode.getReference("User");
@@ -216,13 +217,13 @@ public class RegisterActivity extends AppCompatActivity {
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isComplete()) {
                                         //Sending verification email
-//                              firebaseUser.sendEmailVerification();
+//                                      firebaseUser.sendEmailVerification();
 
                                         //Opening the user's profile
-                                /*Intent intent = new Intent(RegisterActivity.this, UserProfileActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
-                                        finish();*/
+                                        finish();
                                         Toast.makeText(RegisterActivity.this, "Registration successful", Toast.LENGTH_LONG)
                                                 .show();
                                     } else {
