@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#DFDFDF">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/licenceDetails"
         android:layout_width="370dp"
         android:layout_height="170dp"
         android:layout_marginStart="20dp"
@@ -17,6 +17,7 @@
         app:cardCornerRadius="30dp">
 
         <ImageView
+            android:id="@+id/profilePicture"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
@@ -25,10 +26,21 @@
             android:src="@drawable/ic_launcher_background" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:layout_marginTop="50dp"
+            android:text="Name:"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="210dp"
+            android:layout_marginTop="50dp"
+
             android:text="Username"
             android:textSize="20sp" />
 
@@ -40,24 +52,44 @@
             android:background="@android:color/darker_gray" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/licenceNo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="140dp"
             android:layout_marginTop="90dp"
-            android:text="Licence Expiry"
+            android:text="Licence Number:"
+            android:textSize="14sp" />
+
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/licenceNoDisplay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="260dp"
+            android:layout_marginTop="90dp"
+            android:text="Licence"
             android:textSize="14sp" />
 
         <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/expiryOfLicence"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="270dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="110dp"
+            android:text="Expiry Date:"
+            android:textSize="14sp" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/licenceExpiry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="260dp"
+            android:layout_marginTop="110dp"
             android:text="Date"
             android:textSize="14sp" />
 
 
     </com.google.android.material.card.MaterialCardView>
-
 
 
 </RelativeLayout>

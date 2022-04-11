@@ -38,8 +38,8 @@ public class RegisterActivity extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseDatabase rootNode;
     DatabaseReference reference;
-    private TextInputLayout passwordInput, fullNames,
-            emailInput, birthDate, identityNo, licenceNumber, issueDate, expiryDate, vehicleCat;
+    private TextInputLayout passwordInput, fullNames, emailInput, birthDate,
+            identityNo, licenceNumber, issueDate, expiryDate, vehicleCat;
     private RadioGroup radioGroup;
     private RadioButton radioButton;
     private DatePickerDialog datePicker;
@@ -204,15 +204,15 @@ public class RegisterActivity extends AppCompatActivity {
                         if (task.isComplete()) {
                             FirebaseUser firebaseUser = auth.getCurrentUser();
 
-                            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(name).build();
+                            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder().setDisplayName(licenceNo).build();
                             firebaseUser.updateProfile(profileChangeRequest);
 
                             DriverInfo driverInfo = new DriverInfo(name, email, gender, password, dateOfBirth, dateOfIssue,
                                     dateOfExpiry, vehicleCategory, identityNumber, licenceNo);
 
-                            reference = rootNode.getReference("User");
+                            reference = rootNode.getReference("Users");
 
-                            reference.child(firebaseUser.getUid()).setValue(driverInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
+                            reference.child(licenceNo).setValue(driverInfo).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isComplete()) {
@@ -220,7 +220,7 @@ public class RegisterActivity extends AppCompatActivity {
 //                                      firebaseUser.sendEmailVerification();
 
                                         //Opening the user's profile
-                                        Intent intent = new Intent(RegisterActivity.this, HomeActivity.class);
+                                        Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
                                         startActivity(intent);
                                         finish();
