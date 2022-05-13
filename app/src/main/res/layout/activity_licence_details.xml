@@ -213,9 +213,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/issueDate"
-                android:layout_toRightOf="@+id/expiryDated"
                 android:layout_marginLeft="90dp"
                 android:layout_marginTop="5dp"
+                android:layout_toRightOf="@+id/expiryDated"
                 android:text="Expiry Date"
                 android:textSize="20sp" />
 
