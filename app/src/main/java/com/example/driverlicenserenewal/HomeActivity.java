@@ -8,6 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
@@ -23,6 +24,7 @@ public class HomeActivity extends AppCompatActivity {
 
     private MaterialTextView userName, licenceNoDisplay, licenceExpiry;
     private ImageView profilePicture;
+    SwipeRefreshLayout swipeRefreshLayout;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -34,6 +36,7 @@ public class HomeActivity extends AppCompatActivity {
         licenceNoDisplay = findViewById(R.id.licenceNoDisplay);
         licenceExpiry = findViewById(R.id.licenceExpiry);
         profilePicture = findViewById(R.id.profilePicture);
+        swipeRefreshLayout = findViewById(R.id.refreshLayout);
 
         showLicence();
 
